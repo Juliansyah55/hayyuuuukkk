@@ -32,34 +32,24 @@ client.on('message', async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
-
-    let prefix = (config.prefix);
-    let msg = message.content.toLowerCase();
-    let args = message.content.slice(prefix.length).trim().split(/ +/g);
-    let command = args.shift().toLowerCase();
-    let sender = message.author;
-    if (message == `<@${client.user.id}>` || message == `<@!${client.user.id}>`) {
-    message.channel.send(`**Prefix Saya : ${prefix}**`)
-  }
-
   if(!message.content.startsWith(prefix)) return undefined;
   message.prefix = prefix;
 
     if(!msg.startsWith(prefix)) return;//---------------------
-
-    try {
-        let commandFile = require(`./cmds/${command}.js`); 
-        commandFile.run(client, message, args); 
-    } catch(e) { 
-        console.log(e.message); 
-    } finally { 
-        console.log(`${message.author.tag} menggunakan command: ${command} di ${message.guild.name}`);
-    }
   
   });
 
 
   client.on("ready", async() => {
+    
+        function randomStatus() {
+      let status = [`Created By Juliansyah_`] 
+      let rstatus = Math.floor(Math.random() * status.length);
+   
+      
+      client.user.setActivity(status[rstatus], {type: "WATCHING" });
+    }; setInterval(randomStatus, 5000)
+    
     client.user.setStatus('online').then(console.log).catch(console.error);
       console.log(`Logged in as : ${client.user.tag}`);
       console.log(`${client.user.username} is ready!`)
