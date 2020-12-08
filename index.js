@@ -32,11 +32,6 @@ client.on('message', async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
-  if(!message.content.startsWith(prefix)) return undefined;
-  message.prefix = prefix;
-
-    if(!msg.startsWith(prefix)) return;//---------------------
-  
   });
 
 
