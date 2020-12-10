@@ -28,29 +28,29 @@ module.exports = function (client) {
       var textString3 = `${member.user.username}`;
       //if the text is too big then smaller the text
       if (textString3.length >= 10) {
-        ctx.font = '150px Sirens DEMO';
+        ctx.font = 'bold 150px Genta';
         ctx.fillStyle = '#ffcb81';
         ctx.fillText(textString3, 700, canvas.height / 2 + 20);
       }
       //else dont do it: NAMA ORANG BARU
       else {
-        ctx.font = '150px Sirens DEMO';
+        ctx.font = 'bold 150px Genta';
         ctx.fillStyle = '#ffcb81';
         ctx.fillText(textString3, 700, canvas.height / 2 + 20);
       }
       //define the HASTAG
       var textString2 = `#${member.user.discriminator}`;
-      ctx.font = '60px Sirens DEMO';
+      ctx.font = 'bold 60px Genta';
       ctx.fillStyle = '#ffcb81';
       ctx.fillText(textString2, 730, canvas.height / 2 + 90);
       //define the Member count
       var textString4 = `Member #${member.guild.memberCount}`;
-      ctx.font = '70px Sirens DEMO';
+      ctx.font = 'bold 70px Genta';
       ctx.fillStyle = '#ffcb81';
       ctx.fillText(textString4, 750, canvas.height / 2 + 170);
       //get the SERVER GRUP
       var textString4 = `${member.guild.name}`;
-      ctx.font = '130px Sirens DEMO';
+      ctx.font = 'bold 130px Genta';
       ctx.fillStyle = '#ffcb81';
       ctx.fillText(textString4, 700, canvas.height / 2 - 150);
       //create a circular "mask"
