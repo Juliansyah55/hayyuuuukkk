@@ -1,10 +1,7 @@
-const Discord = require('discord.js');
-const client = new Discord.Client({ disableMentions: 'everyone' });
-const ytdl = require("ytdl-core");
+const Discord = require("discord.js")
+const client = new Discord.Client({ disableMentions: 'everyone' })
 client.commands = new Discord.Collection();
 const config = require('./config.json')
-const snek = require("node-superfetch")
-const dotenv = require("dotenv")
 const Canvas = require("canvas")
 
 const welcome = require("./welcome");
@@ -18,7 +15,6 @@ const ms = require('ms')
 
 const http = require('http');
 const express = require('express');
-const { measureMemory } = require('vm');
 const app = express ()
 
 app.listen(process.env.PORT)
@@ -38,7 +34,7 @@ client.on('message', async message => {
   client.on("ready", async() => {
     
         function randomStatus() {
-      let status = [`Created By Juliansyah_`] 
+      let status = [`©Created By Juliansyah_`, `©Created By Naufal`, `${client.users.cache.size} CUSTOMER`] 
       let rstatus = Math.floor(Math.random() * status.length);
    
       
@@ -51,6 +47,5 @@ client.on('message', async message => {
   
   }, 30000)
   
-
 
    client.login(config.TOKEN);
