@@ -1,12 +1,12 @@
-const Discord = require("discord.js")
-const client = new Discord.Client({ disableMentions: 'everyone' })
+const Discord = require("discord.js");
+const client = new Discord.Client({ disableMentions: 'everyone' });
 client.commands = new Discord.Collection();
-const config = require('./config.json')
+const config = require('./config.json');
 const Canvas = require("canvas")
 
 const welcome = require("./welcome");
 welcome(client);
-
+  
 client.aliases = new Discord.Collection();
 client.snipes = new Map();
 const queue = new Map();
@@ -34,7 +34,7 @@ client.on('message', async message => {
   client.on("ready", async() => {
     
         function randomStatus() {
-      let status = [`©Created By Juliansyah_`, `©Created By Naufal`, `${client.users.cache.size} CUSTOMER`] 
+      let status = [`${client.users.cache.size} CUSTOMER`, `discord.gg/warkop`] 
       let rstatus = Math.floor(Math.random() * status.length);
    
       
